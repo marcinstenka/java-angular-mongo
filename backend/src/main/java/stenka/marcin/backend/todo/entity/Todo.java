@@ -2,12 +2,6 @@ package stenka.marcin.backend.todo.entity;
 
 import java.util.Date;
 
-import lombok.*;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@EqualsAndHashCode
 public class Todo {
 
     private int id;
