@@ -12,4 +12,5 @@ public class StenkowaApplication {
         SpringApplication.run(StenkowaApplication.class, args);
     }
 
+
 }
