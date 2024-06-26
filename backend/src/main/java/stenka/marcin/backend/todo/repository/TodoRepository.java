@@ -19,7 +19,7 @@ public class TodoRepository {
 
     @PostConstruct
     private void init() {
-        todos.add(new Todo(123, "Test nazwy 1", "Test opisu 1", "red", new Date()));
-        todos.add(new Todo(321, "Test nazwy 2", "Test opisu 2", "black", new Date()));
+        todos.add(new Todo(1, "Test nazwy 1", "Test opisu 1", "red", new Date()));
+        todos.add(new Todo(2, "Test nazwy 2", "Test opisu 2", "black", new Date()));
     }
 }
