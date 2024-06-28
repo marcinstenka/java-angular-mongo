@@ -7,6 +7,7 @@ import stenka.marcin.backend.todo.model.Todo;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class TodoRepository {
@@ -15,6 +16,11 @@ public class TodoRepository {
 
     public List<Todo> findAll() {
         return todos;
+    }
+
+    public Optional<Todo> findById(int id) {
+        return todos.stream()
+                .filter(todo -> todo.id() == id).findFirst();
     }
 
     @PostConstruct
