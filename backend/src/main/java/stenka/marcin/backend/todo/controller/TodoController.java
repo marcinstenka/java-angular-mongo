@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.ErrorResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import stenka.marcin.backend.todo.model.Todo;
 import stenka.marcin.backend.todo.repository.TodoRepository;
@@ -37,6 +34,12 @@ public class TodoController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Todo with id = " + id + " was not found.");
         }
         return todo.get();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/create")
+    void create(@RequestBody Todo todo) {
+        todoRepository.create(todo);
     }
 }
 

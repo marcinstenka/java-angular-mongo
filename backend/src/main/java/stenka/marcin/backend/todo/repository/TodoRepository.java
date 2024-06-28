@@ -23,6 +23,10 @@ public class TodoRepository {
                 .filter(todo -> todo.id() == id).findFirst();
     }
 
+    public void create(Todo todo) {
+        todos.add(todo);
+    }
+
     @PostConstruct
     private void init() {
         todos.add(new Todo(1, "Test nazwy 1", "Test opisu 1", "red", new Date()));
