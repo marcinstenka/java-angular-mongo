@@ -27,6 +27,14 @@ public class TodoRepository {
         todos.add(todo);
     }
 
+    public void update(Todo todo, int id) {
+        Optional<Todo> existingTodo = findById(id);
+        if (existingTodo.isPresent()) {
+            int existingTodoIndex = todos.indexOf(existingTodo.get());
+            todos.set(existingTodoIndex, todo);
+        }
+    }
+
     @PostConstruct
     private void init() {
         todos.add(new Todo(1, "Test nazwy 1", "Test opisu 1", "red", new Date()));

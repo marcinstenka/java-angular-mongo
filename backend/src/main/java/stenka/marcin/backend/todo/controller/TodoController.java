@@ -41,5 +41,12 @@ public class TodoController {
     void create(@RequestBody Todo todo) {
         todoRepository.create(todo);
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{id}")
+    void update(@RequestBody Todo todo, @PathVariable int id) {
+        todoRepository.update(todo, id);
+    }
+
 }
 
