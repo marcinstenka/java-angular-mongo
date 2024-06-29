@@ -48,5 +48,10 @@ public class TodoController {
         todoRepository.update(todo, id);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    void delete(@PathVariable int id) {
+        todoRepository.delete(id);
+    }
 }
 
